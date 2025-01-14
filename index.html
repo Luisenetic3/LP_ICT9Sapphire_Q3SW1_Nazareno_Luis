@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(80, 4, 151);
+            font-family: 'Josefin Sans';
+        }
+
+        .wrapper {
+            width: 420px;
+            background-color: rgb(118, 8, 221);
+            
+            border-radius: 20px;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .wrapper h1 {
+            
+            margin-bottom: 20px;
+        }
+
+        .button {
+            margin: 1px 0px;
+            padding: 15px 25px;
+            background: rgb(255, 255, 255);
+            border: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: rgb(200, 200, 200);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>                                                                    <!--normal comments teacher just dont mind it-->
+    <div class="wrapper">
+        <h1 style="color: white;">Currency Converter</h1>
+        <p style="color: white;">100 PHP equals:</p>
+        <br>
+        <h2 style="color: white;">Equals to:</h2>
+        <div id="result" style="color: white;">Select a currency</div>
+        <br>
+        <button class="button" onclick="convertCurrency('Dollar', 0.017)">Dollar</button> <!--('Dollar', 0.017) = (currency, rate) [you can see it in the script tab]-->
+        <button class="button" onclick="convertCurrency('Yen', 2.69)">Yen</button> <!--('Yen', 2.69) = (currency, rate) [you can see it in the script tab]-->
+        <button class="button" onclick="convertCurrency('Euro', 0.017)">Euro</button> <!--('Euro', 0.017) = (currency, rate) [you can see it in the script tab]-->
+        <br>
+        <button class="button" onclick="convertCurrency('Pound', 0.014)">Pound</button><!--('Pound', 0.014) = (currency, rate) [you can see it in the script tab]-->
+        <button class="button" onclick="convertCurrency('Baht', 0.59)">Baht</button><!--('Baht', 0.59) = (currency, rate) [you can see it in the script tab]-->
+    </div>
+
+    <script>
+        function convertCurrency(currency, rate) { //used to code with lua and this is kind of the same thing
+                                                   //specifically in roblox studio module scripts but you call its module inside another script you made
+                                                   //and the values in the module script inside the parenthesis are undefined variables until you
+                                                   //call it and with a prenthesis next to the called function you add the desired models and values to it
+                                                   //just like here with currency meaning the currencies name and the rate
+                                                   //meaning the amount 1 php equals to in that respective currency
+            var pesos = 100;  // Replaced const with var
+            var converted = (pesos * rate).toFixed(2);  // Replaced const with var
+            document.getElementById('result').innerText = `${converted} ${currency}`; //currency = currency name ex. below
+                                                                                      //currency = Dollar, proof = ('Dollar', 0.017) = (currency, rate)
+        }
+    </script>
+    
+</body>
+</html>
