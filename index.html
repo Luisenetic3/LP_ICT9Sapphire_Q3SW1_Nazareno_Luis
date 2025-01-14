@@ -70,13 +70,16 @@
         <br>
         <h2 style="color: white;">Equals to:</h2>
         <div id="result" style="color: white;">Select a currency</div>
-        <br>
+        <br>                            <!--onclick then "convertCurrency basically calls that specific function miss"-->
         <button class="button" onclick="convertCurrency('Dollar', 0.017)">Dollar</button> <!--('Dollar', 0.017) = (currency, rate) [you can see it in the script tab]-->
         <button class="button" onclick="convertCurrency('Yen', 2.69)">Yen</button> <!--('Yen', 2.69) = (currency, rate) [you can see it in the script tab]-->
         <button class="button" onclick="convertCurrency('Euro', 0.017)">Euro</button> <!--('Euro', 0.017) = (currency, rate) [you can see it in the script tab]-->
         <br>
         <button class="button" onclick="convertCurrency('Pound', 0.014)">Pound</button><!--('Pound', 0.014) = (currency, rate) [you can see it in the script tab]-->
         <button class="button" onclick="convertCurrency('Baht', 0.59)">Baht</button><!--('Baht', 0.59) = (currency, rate) [you can see it in the script tab]-->
+
+        <!-- Refresh Button -->
+        <button class="button" onclick="resetResult()" style="margin-top: 20px;">Refresh</button>
     </div>
 
     <script>
@@ -90,6 +93,10 @@
             var converted = (pesos * rate).toFixed(2);  // Replaced const with var
             document.getElementById('result').innerText = `${converted} ${currency}`; //currency = currency name ex. below
                                                                                       //currency = Dollar, proof = ('Dollar', 0.017) = (currency, rate)
+        }
+
+        function resetResult() {
+            document.getElementById('result').innerText = "Select a currency";
         }
     </script>
     
